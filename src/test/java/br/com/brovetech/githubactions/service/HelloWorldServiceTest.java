@@ -20,7 +20,7 @@ class HelloWorldServiceTest {
         Map<String, String> helloWorld = helloWorldService.getHelloWorld();
         Assertions.assertEquals(1, helloWorld.size());
         Assertions.assertNotNull(helloWorld.get("hello"));
-        Assertions.assertEquals("world!!", helloWorld.get("hello"));
+        Assertions.assertEquals("world!!!", helloWorld.get("hello"));
     }
 
     @Test
