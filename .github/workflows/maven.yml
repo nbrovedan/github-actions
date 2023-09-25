@@ -54,3 +54,4 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: nbrovedan/github-actions:latest
+          platforms: linux/amd64,linux/arm64
