@@ -1,10 +1,9 @@
 package br.com.brovetech.githubactions.controller;
 
 import br.com.brovetech.githubactions.service.HelloWorldService;
+import ch.qos.logback.core.util.InvocationGate;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.Map;
@@ -19,5 +18,12 @@ public class HelloWorldController {
     @GetMapping
     public Map<String, String> getHelloWorld(){
         return helloWorldService.getHelloWorld();
+    }
+
+    @PostMapping
+    public Map<String, Integer> sumNumbers(@RequestBody Map<String, Integer> numbers){
+        Integer[] mappedNumbers = numbers.entrySet().parallelStream().map(Map.Entry::getValue).toArray(Integer[]::new);
+        Integer sum = helloWorldService.sumNumbers(mappedNumbers);
+        return Collections.singletonMap("sum", sum);
     }
 }
