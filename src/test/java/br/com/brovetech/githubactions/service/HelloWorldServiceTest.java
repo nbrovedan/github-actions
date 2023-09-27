@@ -16,17 +16,39 @@ class HelloWorldServiceTest {
     private HelloWorldService helloWorldService;
 
     @Test
-    void getHelloWorld() {
-        Map<String, String> helloWorld = helloWorldService.getHelloWorld();
-        Assertions.assertEquals(1, helloWorld.size());
-        Assertions.assertNotNull(helloWorld.get("hello"));
-        Assertions.assertEquals("world!!!", helloWorld.get("hello"));
+    void testSumNumbers() {
+        Integer result = helloWorldService.sumNumbers(1,2,3);
+        Assertions.assertEquals(6, result);
     }
 
     @Test
-    void sumNumbers() {
-        Integer[] nums = new Integer[]{1,2,3};
-        Integer sum = helloWorldService.sumNumbers(nums);
-        Assertions.assertEquals(6, sum);
+    void testSumNumbersWithNoNumbers() {
+        Integer result = helloWorldService.sumNumbers();
+        Assertions.assertEquals(0, result);
+    }
+
+    @Test
+    void maxNumber() {
+        Integer result = helloWorldService.maxNumber(1,2,3);
+        Assertions.assertEquals(3, result);
+    }
+
+    @Test
+    void minNumber() {
+        Integer result = helloWorldService.minNumber(1,2,3);
+        Assertions.assertEquals(1, result);
+    }
+
+    @Test
+    void average() {
+        Double result = helloWorldService.average(1,2,3);
+        Assertions.assertEquals(2, result);
+    }
+
+    @Test
+    void getHelloWorld() {
+        Map<String, String> result = helloWorldService.getHelloWorld();
+        Assertions.assertEquals(1, result.size());
+        Assertions.assertEquals("world!!!", result.get("hello"));
     }
 }
