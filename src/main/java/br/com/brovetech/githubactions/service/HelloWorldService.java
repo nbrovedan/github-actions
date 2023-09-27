@@ -15,6 +15,10 @@ public class HelloWorldService {
     }
 
     public Integer sumNumbers(Integer... numbers) {
+        if(numbers.length == 0)
+        {
+            return 0;
+        }
         return Arrays.stream(numbers).reduce(0, Integer::sum);
     }
 
