@@ -22,6 +22,12 @@ class HelloWorldServiceTest {
     }
 
     @Test
+    void testSumNumbersWithNoNumbers() {
+        Integer result = helloWorldService.sumNumbers();
+        Assertions.assertEquals(0, result);
+    }
+
+    @Test
     void maxNumber() {
         Integer result = helloWorldService.maxNumber(1,2,3);
         Assertions.assertEquals(3, result);

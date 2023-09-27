@@ -1,7 +1,6 @@
 package br.com.brovetech.githubactions.controller;
 
 import br.com.brovetech.githubactions.service.HelloWorldService;
-import ch.qos.logback.core.util.InvocationGate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
