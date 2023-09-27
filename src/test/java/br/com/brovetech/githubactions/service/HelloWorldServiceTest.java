@@ -16,6 +16,6 @@ class HelloWorldServiceTest {
     @Test
     void sumNumbers() {
         Integer sum = helloWorldService.sumNumbers(1,2,3);
-        Assertions.assertEquals(6, 6);
+        Assertions.assertEquals(6, sum);
     }
 }
